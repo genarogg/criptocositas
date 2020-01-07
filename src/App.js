@@ -1,5 +1,5 @@
 import React from 'react';
-import img from './cryto';
+import img from './cryptomonedas.png';
 
 
 function App() {
