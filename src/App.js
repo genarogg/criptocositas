@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() =>{
     const cotizarCriptomodena = async () => {
-      const url = `https://min-api.cryptocompare.com/data/price?fsym=${criptomoneda}&tsyms=${moneda}`
+      const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
 
       const resultado = await axios.get(url)
     }
