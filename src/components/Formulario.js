@@ -4,7 +4,7 @@ import Criptomoneda from "./Criptomoneda"
 import Error from "./Error"
 
 
-function Formulario() {
+function Formulario({guardarMoneda, guardarCriptomoneda}) {
 
     const [ criptomonedas, guardarCriptomonedas] = useState([])
     const [ monedaCotizar, guardarMonedaCotizar ] = useState("");
@@ -35,6 +35,8 @@ function Formulario() {
         /*  */
 
         guardarError(false);
+        guardarMoneda(monedaCotizar);
+        guardarCriptomoneda(criptoCotizar);
         
     }
 
