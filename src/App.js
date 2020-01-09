@@ -2,22 +2,37 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import img from './cryptomonedas.png';
 import Formulario from "./components/Formulario"
+import Spinner from "./components/Spinner"
 
 
 function App() {
 
   const [ moneda, guardarMoneda ] = useState("");
   const [ criptomoneda, guardarCriptomoneda ] = useState("");
+  const [ cargando, guardarCargando ] = useState(false)
 
   useEffect(() =>{
     const cotizarCriptomodena = async () => {
+
+      /* si, no hay moneda no ejecutar */
+      if(moneda === "") return
+
       const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
 
       const resultado = await axios.get(url)
+      
+      guardarCargando(true)
+
+      setTimeout(() => {
+        guardarCargando(false)
+      }, 3000);
     }
+
 
     cotizarCriptomodena()
   }, [criptomoneda, moneda])
+
+  const componente = (cargando) ? <Spinner /> : null;
 
   return (
     <div className="container">
@@ -32,6 +47,8 @@ function App() {
             guardarMoneda={guardarMoneda}
             guardarCriptomoneda={guardarCriptomoneda}
           />
+
+          { componente }
         </div>
       </div>
     </div>
