@@ -67,7 +67,7 @@ function Formulario({guardarMoneda, guardarCriptomoneda}) {
                 <select className="u-full-width" name="" id=""
                     onChange={ e => guardarCriptoCotizar(e.target.value) }
                 >
-                    <option value="">Elige tu CrptoMoneda</option>
+                    <option value="">Elige tu CriptoMoneda</option>
                     {criptomonedas.map(criptomoneda =>(
                         <Criptomoneda 
                             key={criptomoneda.CoinInfo.Id}

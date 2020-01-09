@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import img from './cryptomonedas.png';
+import img2 from './cryptomonedas2.png';
 import Formulario from "./components/Formulario"
 import Cotizacion from "./components/Cotizacion"
 import Spinner from "./components/Spinner"
@@ -40,22 +41,32 @@ function App() {
   const componente = (cargando) ? <Spinner /> : <Cotizacion resultado={resultado}/>;
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="one-half column">
-          <img className="logotipo" src={img} alt="imagen de criptomonedas"/>
+    <div className="vph">
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
+            <img className="logotipo hidden-1" src={img} alt="imagen de criptomonedas"/>
+            <img className="logotipo hidden-2" src={img2} alt="imagen de criptomonedas"/>
+          </div>
+          <div className="one-half column">
+            <h1>Cotiza criptomonedas al Instante</h1>
+            <Formulario 
+              guardarMoneda={guardarMoneda}
+              guardarCriptomoneda={guardarCriptomoneda}
+            />
 
+            { componente }
+          </div>
         </div>
-        <div className="one-half column">
-          <h1>Cotiza criptomonedas al Instante</h1>
-          <Formulario 
-            guardarMoneda={guardarMoneda}
-            guardarCriptomoneda={guardarCriptomoneda}
-          />
 
-          { componente }
-        </div>
+        
+        
       </div>
+      <footer>
+        <div className="centrado">
+            <p>De LATAM con <span role="img" aria-label="sheep">💜</span> para el mundo | Genarogg</p>
+        </div>
+        </footer>
     </div>
   );
 }
