@@ -55,10 +55,12 @@ function Formulario({guardarMoneda, guardarCriptomoneda}) {
                     onChange={ e => guardarMonedaCotizar(e.target.value) }
                 >
                     <option value="">Elige tu Moneda</option>
-                    <option value="USD">Dolar Estado Unidense</option>
-                    <option value="MXN">Peso Mexicano</option>
-                    <option value="GBP">Libra</option>
-                    <option value="EUR">Euro</option>
+                    <option value="VES">Bolivar soberano | Venezuela</option>
+                    
+                    <option value="USD">Dolar | United states</option>
+                    <option value="MXN">Peso | Mexico</option>
+                    <option value="GBP">Libra | Reino Unido</option>
+                    <option value="EUR">Euro | Unión Europea</option>
                 </select>
             </div>
 
