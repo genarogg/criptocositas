@@ -6,7 +6,7 @@
 </p>
 
 <h1>
-  Crea un Carousel Responsive Fácilmente con Glider.js
+  Aplicación de cotización de criptomonedas. Entrega los datos acerca de el valor, subida o bajada y el estado de las ultimas 24 horas.
 </h1>
 
 _Link del proyecto_ <a href="https://criptocositas.herokuapp.com/">ver.</a>
